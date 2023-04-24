@@ -14,13 +14,10 @@ pipeline {
             steps {
                 catchError {
                     sh '''
-                        rm -rf testng-curl # name of your github repository
+                        rm -rf pytest-curl # name of your github repository
                         git clone https://github.com/harshbrowserstack/pytest-curl # clone your github repository
                         cd pytest-curl # cd to your repo
-                        M2_HOME="/var/lib/jenkins/workspace/apache-maven-3.6.3/bin" # path to your maven
-                        export PATH="$M2_HOME:$PATH" # set maven path if it does not exists
-                        mvn clean # clean your maven project
-                        mvn test # run your tests
+                        pytest --junitxml=./test.xml
                     '''
                 }
             }
