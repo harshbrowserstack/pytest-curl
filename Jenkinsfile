@@ -16,6 +16,7 @@ pipeline {
                     sh '''
                         which python
                         python -m ensurepip --upgrade --user
+                        pwd
                         export PATH=$PATH:/usr/local/bin
                         pip install -U mock
                         cd pytest-curl # cd to your repo
