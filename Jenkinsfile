@@ -16,14 +16,9 @@ pipeline {
                     sh '''
                         
                         python -V
-                        virtualenv venv --distribute
-                        . venv/bin/activate 
-                        pip install -r requirements.txt
-                        python tests.py
+                        sh pip install -U mock
                         cd pytest-curl # cd to your repo
-                        ls
                         pytest --junitxml=./test.xml
-                        ls
                     '''
                 }
             }
