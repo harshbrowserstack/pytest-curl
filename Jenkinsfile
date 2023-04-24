@@ -10,7 +10,7 @@ pipeline {
             string(name: 'USER_EMAIL', defaultValue: 'test.management23@gmail.com', description: 'User Email')
         }
     stages {
-        stage('Run Maven Tests') {
+        stage('Run Pytest') {
             steps {
                 catchError {
                     sh '''
