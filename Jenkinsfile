@@ -17,6 +17,7 @@ pipeline {
                         rm -rf pytest-curl # name of your github repository
                         git clone https://github.com/harshbrowserstack/pytest-curl # clone your github repository
                         python -V
+                        pip install pytest
                         cd pytest-curl # cd to your repo
                         pytest --junitxml=./test.xml
                     '''
