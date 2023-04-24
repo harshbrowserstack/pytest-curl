@@ -16,7 +16,8 @@ pipeline {
                     sh '''
                         
                         python -V
-                        sh pip install -U mock
+                        export PATH=$PATH:/usr/local/bin
+                        pip install -U mock
                         cd pytest-curl # cd to your repo
                         pytest --junitxml=./test.xml
                     '''
