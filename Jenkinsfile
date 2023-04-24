@@ -18,7 +18,7 @@ pipeline {
                         pip3 install pytest
                         pip3 show pytest
                         cd pytest-curl # cd to your repo
-                        /var/lib/jenkins/.local/lib/python3.7/site-packages/pytest --junitxml=./test.xml
+                        python3 -m pytest --junitxml=./test.xml
                     '''
                 }
             }
