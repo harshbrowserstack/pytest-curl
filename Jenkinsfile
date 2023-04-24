@@ -15,10 +15,8 @@ pipeline {
                 catchError {
                     sh '''
                         python3 -V
-                        which python3
-                        python3 -m ensurepip --upgrade --user
-                        pwd
                         export PATH=$PATH:/usr/local/bin
+                        python3 -m pip install --upgrade pip
                         pip3 install pytest
                         cd pytest-curl # cd to your repo
                         pytest --junitxml=./test.xml
