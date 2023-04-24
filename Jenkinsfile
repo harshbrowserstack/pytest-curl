@@ -14,9 +14,12 @@ pipeline {
             steps {
                 catchError {
                     sh '''
-                        
+                       
                         export PATH=$PATH:/usr/local/bin
+                        
                         cd pytest-curl # cd to your repo
+                        git checkout .
+                        git pull origin master
                         python3 -m pytest --junitxml=./test.xml
                     '''
                 }
