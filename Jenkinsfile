@@ -14,7 +14,8 @@ pipeline {
             steps {
                 catchError {
                     sh '''
-                        
+                        which python
+                        python -m ensurepip --upgrade
                         python -V
                         export PATH=$PATH:/usr/local/bin
                         env
