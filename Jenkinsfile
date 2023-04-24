@@ -14,10 +14,12 @@ pipeline {
             steps {
                 catchError {
                     sh '''
-                        rm -rf pytest-curl # name of your github repository
-                        git clone https://github.com/harshbrowserstack/pytest-curl # clone your github repository
-                        python -V
                         
+                        python -V
+                        virtualenv venv --distribute
+                        . venv/bin/activate 
+                        pip install -r requirements.txt
+                        python tests.py
                         cd pytest-curl # cd to your repo
                         ls
                         pytest --junitxml=./test.xml
