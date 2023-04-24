@@ -14,9 +14,8 @@ pipeline {
             steps {
                 catchError {
                     sh '''
+                        
                         export PATH=$PATH:/usr/local/bin
-                        pip3 install pytest
-                        pip3 show pytest
                         cd pytest-curl # cd to your repo
                         python3 -m pytest --junitxml=./test.xml
                     '''
