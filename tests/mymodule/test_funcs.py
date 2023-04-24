@@ -9,7 +9,9 @@ def test_add():
     assert add(4, 8) == 14
 
 @pytest.mark.easy_operation
-def test_subtract():
+def test_subtract(record_property):
+    
+    record_property("id", "TC-1763")
     assert subtract(3, 6) == -3
 
 @pytest.mark.difficult_operation
