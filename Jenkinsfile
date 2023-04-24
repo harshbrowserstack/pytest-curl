@@ -16,9 +16,7 @@ pipeline {
                     sh '''
                         which python
                         python -m ensurepip --upgrade --user
-                        python -V
                         export PATH=$PATH:/usr/local/bin
-                        env
                         pip install -U mock
                         cd pytest-curl # cd to your repo
                         pytest --junitxml=./test.xml
